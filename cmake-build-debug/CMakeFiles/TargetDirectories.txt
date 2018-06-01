@@ -1,0 +1,3 @@
+D:/CompC/cmake-build-debug/CMakeFiles/CompC.dir
+D:/CompC/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/CompC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
