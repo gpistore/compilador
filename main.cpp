@@ -9,30 +9,33 @@
 #define TK_while 4
 #define TK_if 5
 #define TK_else 6
-#define TK_id 7
-#define TK_divisao 8
-#define TK_resto 9
-#define TK_Abre_Chaves 10
-#define TK_Fecha_Chaves 11
-#define TK_Fim_Arquivo 12
-#define TK_Atrib 13
-#define TK_Const_Int 14
-#define TK_Mais 15
-#define TK_Menos 16
-#define TK_Mult 17
-#define TK_Abre_Par 18
-#define TK_Fecha_Par 19
-#define TK_virgula 20
-#define TK_pv 21
-#define TK_Maior 22
-#define TK_Menor 23
-#define TK_Menor_Igual 24
-#define TK_Maior_Igual 25
-#define TK_Igual 26
-#define TK_Diferente 27
-#define TK_For 28
-#define TK_Break 29
-#define TK_Continue 30
+#define TK_For 7
+#define TK_Break 8
+#define TK_Continue 9
+#define TK_id 10
+#define TK_divisao 11
+#define TK_resto 12
+#define TK_Abre_Chaves 13
+#define TK_Fecha_Chaves 14
+#define TK_Fim_Arquivo 15
+#define TK_Atrib 16
+#define TK_Const_Int 17
+#define TK_Mais 18
+#define TK_Menos 19
+#define TK_Mult 20
+#define TK_Abre_Par 21
+#define TK_Fecha_Par 22
+#define TK_virgula 23
+#define TK_pv 24
+#define TK_Maior 25
+#define TK_Menor 26
+#define TK_Menor_Igual 27
+#define TK_Maior_Igual 28
+#define TK_Igual 29
+#define TK_Diferente 30
+#define TK_e 31
+#define TK_ou 32
+#define TK_nao 33
 
 
 /***********************************************************************************/
@@ -46,8 +49,11 @@ int linlex=0,collex=1;
 char tokens[][20]={"",
                    "TK_int",
                    "TK_float",
+                   "TK_do",
+                   "TK_while",
                    "TK_if",
                    "TK_else",
+                   "TK_for",
                    "TK_id",
                    "TK_divisao",
                    "TK_resto",
@@ -68,10 +74,13 @@ char tokens[][20]={"",
                    "TK_Menor_Igual",
                    "TK_Maior_Igual",
                    "TK_Igual",
-                   "TK_Diferente"
+                   "TK_Diferente",
+                   "TK_e",
+                   "TK_ou",
+                   "TK_nao"
 };
 
-char reservadas[][20]={"","int","float","if","else","while","do","for","fim"};
+char reservadas[][20]={"","int","float","do","while","if","else","for","fim"};
 
 FILE *arqin;
 int token;
@@ -102,7 +111,6 @@ void restaura()
 
 char le_char()
 {char c;
-
     if (fread(&c,1,1,arqin)==0) return -1;
     if (c=='\n') {linlex++;collex=1;}
     else collex++;
@@ -179,7 +187,27 @@ int le_token()
                         c=le_char();
                         return TK_Diferente;
                     }
+                    return TK_nao;
                 }
+                if (c=='&')
+                {
+                    c=le_char();
+                    if (c=='&')
+                    {
+                        c=le_char();
+                        return TK_e;
+                    }
+                }
+                if (c=='|')
+                {
+                    c=le_char();
+                    if (c=='|')
+                    {
+                        c=le_char();
+                        return TK_ou;
+                    }
+                }
+
                 if (c>='a' && c<='z' || c>='A' && c<='Z' || c=='_')
                 {
                     lex[0]=c;
@@ -505,7 +533,7 @@ int Com_Composto(char Comp_c[])
 int Com_if(char if_c[])
 {
     char Rel_c[MAX_COD],Rel_p[MAX_COD],Com1_c[MAX_COD];
-    ;
+
     char labelelse[10],labelfim[10];
     geralabel(labelelse);
     geralabel(labelfim);
@@ -591,7 +619,9 @@ int Com_Exp(char Com_c[MAX_COD])
 
 int Com(char Com_c[])
 {
-    if (token==TK_if) return Com_if(Com_c);
+    if (token==TK_if) {
+        return Com_if(Com_c);
+    }
     else if (token==TK_id) return Com_Exp(Com_c);
     else if (token==TK_Abre_Chaves) return Com_Composto(Com_c);
     else if (token==TK_pv)
@@ -600,7 +630,10 @@ int Com(char Com_c[])
         strcpy(Com_c,"");
         return 1;
     }
-    else return 0;
+    else{
+        return 0;
+    }
+
 }
 
 int main()
