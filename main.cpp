@@ -40,6 +40,44 @@
 
 /***********************************************************************************/
 /*                                                                                 */
+/*                              *TABELA DE SÍMBOLOS *                               */
+/*                                                                                 */
+/**********************************************************************************/
+
+
+struct variavel {
+    char id[20];
+    char tipo;
+};
+
+struct TabSimb{
+    struct variavel conteudo;
+    struct TabSimb *prox;
+};
+TabSimb *inicio=NULL;
+
+
+void insere(struct variavel var){
+    TabSimb *p ;
+    p =  (TabSimb *) malloc(sizeof(TabSimb));
+    if (p==NULL)
+    {
+        printf("Erro de alocacao\n");
+    }
+    p->conteudo = var;
+    p->prox = NULL;
+    if (inicio==NULL)
+        inicio = p;
+    else {
+        p->prox = inicio;
+        inicio  = p;
+    }
+}
+
+
+
+/***********************************************************************************/
+/*                                                                                 */
 /*  *INÍCIO DO LÉXICO - Não entre a não ser que tenha interesse pessoal em léxicos  */
 /*                                                                                 */
 /**********************************************************************************/
@@ -85,8 +123,10 @@ char reservadas[][20]={"","int","float","do","while","if","else","for","fim"};
 FILE *arqin;
 int token;
 char lex[20];
+char nm_id[20];
 
-// vari�veis do marca - restaura
+
+// vari �veis do marca - restaura
 
 int tokenant;
 long posarq;
@@ -125,8 +165,10 @@ int pal_res(char lex[])
         if (strcmp(lex,reservadas[tk])==0) return tk;
         tk++;
     }
+    strcpy(nm_id,lex);
     return TK_id;
 }
+
 
 int le_token()
 {
@@ -271,6 +313,10 @@ void geralabel(char label[])
 {
     static int numlabel=0;
     sprintf(label,"LB%03d",numlabel++);
+}
+
+void adicionavar(struct variavel var){
+
 }
 
 void geratemp(char temp[])
@@ -538,71 +584,122 @@ int Com_if(char if_c[])
     geralabel(labelelse);
     geralabel(labelfim);
     token=le_token();
-    if (token==TK_Abre_Par)
-    {
+    if (token==TK_Abre_Par){
         token=le_token();
         if (Rel(Rel_p,Rel_c))
-            if (token==TK_Fecha_Par)
-            {
-                token=le_token();
+            if (token==TK_Fecha_Par) {
+                token = le_token();
                 char Com1_c[MAX_COD];
-                if (Com(Com1_c))
-                {
-                    if (token==TK_else)
-                    {
-                        token=le_token();
+                if (Com(Com1_c)) {
+                    if (token == TK_else) {
+                        token = le_token();
                         char Com2_c[MAX_COD];
-                        if (Com(Com2_c))
-                        {
-                            sprintf(if_c,"%s\tif %s==0 goto %s\n%s\tgoto %s\n%s:\n%s%s:\n",Rel_c,Rel_p,labelelse,Com1_c,labelfim,labelelse,Com2_c,labelfim);
+                        if (Com(Com2_c)) {
+                            sprintf(if_c, "%s\tif %s==0 goto %s\n%s\tgoto %s\n%s:\n%s%s:\n", Rel_c, Rel_p, labelelse,Com1_c, labelfim, labelelse, Com2_c, labelfim);
                             return 1;
-                        }
-                        else
-                        {
+                        } else {
                             printf("Erro no comando do else\n");
                             return 0;
                         }
-                    }
-                    else
-                    {
+                    } else {
                         printf("Esperava palavra else\n");
                         return 0;
                     }
-                }
-
-                else 		   {
-                    printf("Esperava fecha parenteses\n");
+                } else {
+                    printf("Erro na expressao do if \n");
                     return 0;
-
                 }
-
-            }
-            else{
-
-                printf("Erro na expressao do if \n");
+            }else{
+                printf("Esperava fecha parenteses\n");
                 return 0;
             }
-        {
-            printf("Esperava abre parenteses\n");
-            return 0;
 
+        }else{
+            printf("Erro na expressao do if \n");
+            return 0;
         }
 
-    }
-    else
-    {
+            printf("Esperava abre parenteses\n");
+            return 0;
+}
+
+int Com_while(char while_c[]){
+    char Rel_c[MAX_COD],Rel_p[MAX_COD];
+    char labelinicio[10],labelfim[10];
+
+    geralabel(labelinicio);
+    geralabel(labelfim);
+
+    token=le_token();
+    if (token==TK_Abre_Par) {
+        token = le_token();
+        if (Rel(Rel_p,Rel_c))
+            if (token==TK_Fecha_Par){
+                token=le_token();
+                char Com1_c[MAX_COD];
+                    if (Com(Com1_c))
+                        sprintf(while_c, "%s:%s\tif %s==1 goto %s\n%s\tgoto %s \n%s:\n",labelinicio,Rel_c, Rel_p, labelfim,Com1_c, labelinicio, labelfim);
+                        return 1;
+            }else{
+                printf("Esperava fecha parenteses\n");
+                return 0;
+            }
+    }else{
         printf("Esperava abre parenteses\n");
         return 0;
-
     }
+
+}
+
+int Com_do(char do_c[]){
+    char Rel_c[MAX_COD],Rel_p[MAX_COD];
+    char labelinicio[10];
+
+    geralabel(labelinicio);
+
+    token=le_token();
+    char Com1_c[MAX_COD];
+    if (Com(Com1_c)){
+        if (token==TK_while) {
+            token = le_token();
+            if (token == TK_Abre_Par) {
+                token = le_token();
+                if (Rel(Rel_p, Rel_c))
+                    if (token == TK_Fecha_Par) {
+                        token = le_token();
+                        sprintf(do_c, "%s:%s %s \tif %s==1 goto %s\n",labelinicio,Com1_c,Rel_c, Rel_p,labelinicio);
+                        return 1;
+                    }else{
+                        printf("Esperava fecha parenteses\n");
+                        return 0;
+                    }
+            }else{
+                printf("Esperava abre parenteses\n");
+                return 0;
+            }
+        }else{
+            printf("Erro na expressao while \n");
+            return 0;
+        }
+    }else{
+        printf("Erro na expressao do_while \n");
+        return 0;
+    }
+    ;
+}
+
+int Com_for(char for_c[]){
+    char Rel_c[MAX_COD],Rel_p[MAX_COD];
+    char labelinicio[10],labelfim[10];
+
 }
 
 int Com_Exp(char Com_c[MAX_COD])
 {
     char id[10];
-    char E_c[MAX_COD],E_p[MAX_COD];
-    if (A(E_p,E_c))
-    {
+        char E_c[MAX_COD],E_p[MAX_COD];
+        if (A(E_p,E_c))
+        {
         if (token==TK_pv)
         {
             token=le_token();
@@ -617,15 +714,48 @@ int Com_Exp(char Com_c[MAX_COD])
     }
 }
 
+int Com_tipo(char Com_c[MAX_COD]){
+    struct variavel var;
+    if(token == TK_int){
+    var.tipo = 'I';
+    }else{
+    var.tipo = 'F';
+    }
+    token=le_token();
+    if (token==TK_id)
+    {
+        strcpy(var.id,nm_id);
+        token=le_token();
+    }else{
+        return 0;
+    }
+    insere(var);
+
+    if (token==TK_pv)
+    {
+        strcpy(Com_c,"");
+        token=le_token();
+        return 1;
+    }
+    else
+    {
+        printf("Faltou ponto-e-virgula apos atribuicao\n");
+        return 0;
+    }
+}
+
 int Com(char Com_c[])
 {
     if (token==TK_if) {
         return Com_if(Com_c);
     }
+    else if (token==TK_For) return Com_for(Com_c);
+    else if (token==TK_do) return Com_do(Com_c);
+    else if (token==TK_while) return Com_while(Com_c);
+    else if (token==TK_int || token==TK_float) return Com_tipo(Com_c);
     else if (token==TK_id) return Com_Exp(Com_c);
     else if (token==TK_Abre_Chaves) return Com_Composto(Com_c);
-    else if (token==TK_pv)
-    {
+    else if (token==TK_pv){
         token=le_token();// comando vazio
         strcpy(Com_c,"");
         return 1;
@@ -660,8 +790,9 @@ int main()
             fprintf(arqout,"%s",Com_C);
             printf("%s",Com_C);
         }
-        getch();
+
     }
+    getch();
     fclose(arqin);
     fclose(arqout);
 }

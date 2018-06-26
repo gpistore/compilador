@@ -15,6 +15,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CompC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CompC.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -29,20 +31,29 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
+      <file leaf-file-name="prog.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://C:/teste/prog.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="543" column="29" selection-start-line="543" selection-start-column="29" selection-end-line="543" selection-end-column="29" />
+            <state relative-caret-position="51">
+              <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prog.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://C:/teste/prog.cpp">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="210">
+              <caret line="751" column="50" selection-start-line="751" selection-start-column="50" selection-end-line="751" selection-end-column="50" />
+              <folding>
+                <element signature="e#3920#7820#0" />
+                <element signature="e#11997#13427#0" />
+                <element signature="e#14650#16179#0" />
+                <element signature="e#16181#16989#0" />
+                <element signature="e#16991#17524#0" />
+                <element signature="e#17113#17500#0" />
+                <element signature="e#17502#18007#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,9 +75,16 @@
       <find>mult</find>
       <find>token</find>
       <find>Com_C</find>
-      <find>Com</find>
       <find>A</find>
       <find>int A</find>
+      <find>tk_int</find>
+      <find>Com</find>
+      <find>int com</find>
+      <find>int</find>
+      <find>Com_Composto</find>
+      <find>fcpause</find>
+      <find>nm_id</find>
+      <find>tk_id</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -99,8 +117,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="1750" />
-    <option name="height" value="985" />
+    <option name="width" value="979" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -108,7 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,6 +137,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -174,31 +192,40 @@
       <workItem from="1527869293093" duration="79000" />
       <workItem from="1527898243603" duration="6723000" />
       <workItem from="1527954652096" duration="7910000" />
-      <workItem from="1527991096622" duration="242000" />
+      <workItem from="1527991096622" duration="1663000" />
+      <workItem from="1529100245017" duration="2615000" />
+      <workItem from="1529709743405" duration="18000" />
+      <workItem from="1529709793970" duration="846000" />
+      <workItem from="1529717983934" duration="4832000" />
+      <workItem from="1529798811256" duration="10833000" />
+      <workItem from="1529850504150" duration="33971000" />
+      <workItem from="1529941301693" duration="2409000" />
+      <workItem from="1529969410695" duration="7987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45828000" />
+    <option name="totallyTimeSpent" value="110760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32793522" />
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32793522" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32793522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32928476" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994602" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32793522" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -212,7 +239,29 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://D:/Onedrive/Aula/UCS/2017-2/Compiladores/old/Trabalho Compiladores/versaoEntrega/analisador - Copia gustavo.c</url>
+          <line>263</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>646</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>697</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>173</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="42" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -223,6 +272,16 @@
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
+        <expression-string>inicio</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>nm_id</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>token</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -230,6 +289,149 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10931">
+          <caret line="643" column="33" lean-forward="true" selection-start-line="643" selection-start-column="33" selection-end-line="643" selection-end-column="33" />
+          <folding>
+            <element signature="e#3920#7820#0" />
+            <element signature="e#11997#13427#0" />
+            <element signature="e#14650#16179#0" />
+            <element signature="e#16181#16989#0" />
+            <element signature="e#16991#17524#0" />
+            <element signature="e#17113#17500#0" />
+            <element signature="e#17502#18007#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11985">
+          <caret line="705" column="13" selection-start-line="705" selection-start-column="13" selection-end-line="705" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11067">
+          <caret line="651" column="25" selection-start-line="651" selection-start-column="25" selection-end-line="651" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8908">
+          <caret line="524" column="5" lean-forward="true" selection-start-line="524" selection-start-column="5" selection-end-line="524" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Onedrive/Aula/UCS/2017-2/Compiladores/old/Trabalho Compiladores/versaoEntrega/analisador - Copia gustavo.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18649">
+          <caret line="1097" column="12" lean-forward="true" selection-start-line="1097" selection-start-column="12" selection-end-line="1097" selection-end-column="12" />
+          <folding>
+            <element signature="e#2641#8171#0" />
+            <element signature="e#8183#11212#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10285">
+          <caret line="605" column="25" lean-forward="true" selection-start-line="605" selection-start-column="25" selection-end-line="605" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Onedrive/Aula/UCS/2017-2/Compiladores/old/Trabalho Compiladores/versaoEntrega/analisador - Copia gustavo.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18649">
+          <caret line="1097" column="12" selection-start-line="1097" selection-start-column="12" selection-end-line="1097" selection-end-column="12" />
+          <folding>
+            <element signature="e#2641#8171#0" />
+            <element signature="e#8183#11212#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2227">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2227">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9367">
+          <caret line="551" column="21" lean-forward="true" selection-start-line="551" selection-start-column="21" selection-end-line="551" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9231">
@@ -419,17 +621,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://D:/Downloads/Game(UC).cpp" />
+    <entry file="file://D:/Onedrive/Aula/UCS/2017-2/Compiladores/old/Trabalho Compiladores/versaoEntrega/analisador - Copia gustavo.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="1097" column="12" selection-start-line="1097" selection-start-column="12" selection-end-line="1097" selection-end-column="12" />
+          <folding>
+            <element signature="e#2641#8171#0" />
+            <element signature="e#8183#11212#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://C:/teste/prog.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="51">
+          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="543" column="29" selection-start-line="543" selection-start-column="29" selection-end-line="543" selection-end-column="29" />
+        <state relative-caret-position="210">
+          <caret line="751" column="50" selection-start-line="751" selection-start-column="50" selection-end-line="751" selection-end-column="50" />
+          <folding>
+            <element signature="e#3920#7820#0" />
+            <element signature="e#11997#13427#0" />
+            <element signature="e#14650#16179#0" />
+            <element signature="e#16181#16989#0" />
+            <element signature="e#16991#17524#0" />
+            <element signature="e#17113#17500#0" />
+            <element signature="e#17502#18007#0" />
+          </folding>
         </state>
       </provider>
     </entry>
