@@ -55,9 +55,10 @@ struct TabSimb{
     struct TabSimb *prox;
 };
 TabSimb *inicio=NULL;
+char nm_id[20];
 
 
-void insere(struct variavel var){
+void insere(variavel var){
     TabSimb *p ;
     p =  (TabSimb *) malloc(sizeof(TabSimb));
     if (p==NULL)
@@ -73,6 +74,34 @@ void insere(struct variavel var){
         inicio  = p;
     }
 }
+
+TabSimb * busca(variavel var, TabSimb *tabela){
+        if (tabela == NULL)  return NULL;
+        if (strcmp(tabela->conteudo.id ,var.id) == 0)  return tabela;
+        return busca (var, tabela->prox);
+    }
+
+void adicionavar(variavel var){
+    TabSimb *variavel;
+    variavel = busca(var,inicio);
+    if(variavel == NULL){
+        insere(var);
+    }else{
+        variavel->conteudo = var;
+    }
+}
+
+int buscavar(){
+    variavel var;
+    strcpy(var.id,nm_id);
+    if(busca(var,inicio) == NULL){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+
 
 
 
@@ -123,7 +152,7 @@ char reservadas[][20]={"","int","float","do","while","if","else","for","fim"};
 FILE *arqin;
 int token;
 char lex[20];
-char nm_id[20];
+
 
 
 // vari �veis do marca - restaura
@@ -315,9 +344,6 @@ void geralabel(char label[])
     sprintf(label,"LB%03d",numlabel++);
 }
 
-void adicionavar(struct variavel var){
-
-}
 
 void geratemp(char temp[])
 {
@@ -561,6 +587,7 @@ int F(char F_p[MAX_COD],char F_c[MAX_COD])
 /**************/
 
 int Com(char Com_c[MAX_COD]);
+int Com_Exp(char Com_c[MAX_COD]);
 
 int Com_Composto(char Comp_c[])
 {
@@ -689,28 +716,80 @@ int Com_do(char do_c[]){
 }
 
 int Com_for(char for_c[]){
-    char Rel_c[MAX_COD],Rel_p[MAX_COD];
-    char labelinicio[10],labelfim[10];
+    char Rel_c[MAX_COD],Rel_p[MAX_COD],exp1_c[MAX_COD],exp2_c[MAX_COD];
+
+    char labellaco[10],labelfim[10],labelcontinue[10];
+
+    geralabel(labellaco);
+    geralabel(labelfim);
+    geralabel(labelcontinue);
+    token = le_token();
+    if (token==TK_Abre_Par) {
+        token = le_token();
+        if(Com_Exp(exp1_c)){
+            if (Rel(Rel_p,Rel_c))   {
+                if (token==TK_pv){
+                    token = le_token();
+                    if(Com_Exp(exp2_c)){
+                        if (token==TK_Fecha_Par) {
+                            token = le_token();
+                            char Com1_c[MAX_COD];
+                            if (Com(Com1_c)) {
+                                sprintf(for_c,"%s %s:%s\tif %s==1 goto %s\n%s %s goto %s \n%s:",exp1_c,labellaco,Rel_c,Rel_p,labelfim,Com1_c,exp2_c,labellaco,labelfim);
+                                return 1;
+                            }else{
+                                printf("Erro no comando do for\n");
+                                return 0;
+                            }
+                        }else{
+                            printf("Esperava fecha parênteses\n");
+                            return 0;
+                        }
+                    }else{
+                        printf("Erro no comando do for\n");
+                        return 0;
+                    }
+                }else{
+                    printf("Erro no comando do for\n");
+                    return 0;
+                }
+            }else{
+                printf("Erro no comando do for\n");
+                return 0;
+            }
+        }else{
+            printf("Erro no comando do for\n");
+            return 0;
+        }
+    }else{
+        printf("Esperava abre parenteses\n");
+        return 0;
+    }
 
 }
 
 int Com_Exp(char Com_c[MAX_COD])
 {
-    char id[10];
-        char E_c[MAX_COD],E_p[MAX_COD];
-        if (A(E_p,E_c))
-        {
-        if (token==TK_pv)
-        {
-            token=le_token();
-            sprintf(Com_c,"%s",E_c);
-            return 1;
+    if(buscavar() == 1) {
+        char id[10];
+            char E_c[MAX_COD],E_p[MAX_COD];
+            if (A(E_p,E_c))
+            {
+            if (token==TK_pv)
+            {
+                token=le_token();
+                sprintf(Com_c,"%s",E_c);
+                return 1;
+            }
+            else
+            {
+                printf("Faltou ponto-e-virgula apos atribuicao\n");
+                return 0;
+            }
         }
-        else
-        {
-            printf("Faltou ponto-e-virgula apos atribuicao\n");
-            return 0;
-        }
+    }else{
+        printf("Variavel nao declarada %s\n",nm_id);
+        return 0;
     }
 }
 
@@ -729,7 +808,7 @@ int Com_tipo(char Com_c[MAX_COD]){
     }else{
         return 0;
     }
-    insere(var);
+    adicionavar(var);
 
     if (token==TK_pv)
     {
@@ -746,15 +825,13 @@ int Com_tipo(char Com_c[MAX_COD]){
 
 int Com(char Com_c[])
 {
-    if (token==TK_if) {
-        return Com_if(Com_c);
-    }
-    else if (token==TK_For) return Com_for(Com_c);
-    else if (token==TK_do) return Com_do(Com_c);
-    else if (token==TK_while) return Com_while(Com_c);
-    else if (token==TK_int || token==TK_float) return Com_tipo(Com_c);
-    else if (token==TK_id) return Com_Exp(Com_c);
+    if (token==TK_id)return Com_Exp(Com_c);
     else if (token==TK_Abre_Chaves) return Com_Composto(Com_c);
+    else if (token==TK_int || token==TK_float) return Com_tipo(Com_c);
+    else if (token==TK_if) return Com_if(Com_c);
+    else if (token==TK_while) return Com_while(Com_c);
+    else if (token==TK_do) return Com_do(Com_c);
+    else if (token==TK_For) return Com_for(Com_c);
     else if (token==TK_pv){
         token=le_token();// comando vazio
         strcpy(Com_c,"");
@@ -783,16 +860,16 @@ int main()
     token=le_token();
     while (token!=TK_Fim_Arquivo)
     {
-        if (Com(Com_C)==0)
+        if (Com(Com_C)==0){
             printf("Erro no comando!!!\n");
-        else
-        {
+           break;
+        }
+        else {
             fprintf(arqout,"%s",Com_C);
             printf("%s",Com_C);
         }
 
     }
-    getch();
     fclose(arqin);
     fclose(arqout);
 }

@@ -15,8 +15,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CompC.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CompC.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CompC.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
@@ -34,8 +32,8 @@
       <file leaf-file-name="prog.cpp" pinned="false" current-in-tab="false">
         <entry file="file://C:/teste/prog.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="68">
+              <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -43,16 +41,14 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="751" column="50" selection-start-line="751" selection-start-column="50" selection-end-line="751" selection-end-column="50" />
+            <state relative-caret-position="17">
+              <caret line="827" column="35" selection-start-line="827" selection-start-column="35" selection-end-line="827" selection-end-column="35" />
               <folding>
-                <element signature="e#3920#7820#0" />
-                <element signature="e#11997#13427#0" />
-                <element signature="e#14650#16179#0" />
-                <element signature="e#16181#16989#0" />
-                <element signature="e#16991#17524#0" />
-                <element signature="e#17113#17500#0" />
-                <element signature="e#17502#18007#0" />
+                <element signature="e#10717#11091#0" />
+                <element signature="e#11093#12124#0" />
+                <element signature="e#12126#12500#0" />
+                <element signature="e#13934#14730#0" />
+                <element signature="e#20914#21424#0" />
               </folding>
             </state>
           </provider>
@@ -62,14 +58,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>char</find>
-      <find>if</find>
-      <find>chaves</find>
-      <find>chavesr</find>
-      <find>le_tok</find>
-      <find>tk_mult</find>
-      <find>tk_d</find>
-      <find>tk_divi</find>
       <find>diferente</find>
       <find>MAX_COD</find>
       <find>mult</find>
@@ -83,8 +71,23 @@
       <find>int</find>
       <find>Com_Composto</find>
       <find>fcpause</find>
-      <find>nm_id</find>
+      <find>f(</find>
+      <find>(f(</find>
+      <find>TK_id</find>
+      <find>adicionarv</find>
+      <find>inserevar</find>
       <find>tk_id</find>
+      <find>buscavar</find>
+      <find>var</find>
+      <find>nm_id</find>
+      <find>&amp;&amp;</find>
+      <find>Com_Exp</find>
+      <find>Com(</find>
+      <find>com_for</find>
+      <find>com_exp(</find>
+      <find>A(</find>
+      <find>A(</find>
+      <find>rel(</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -117,7 +120,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="979" />
+    <option name="width" value="980" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -126,6 +129,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -137,7 +141,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,16 +203,18 @@
       <workItem from="1529798811256" duration="10833000" />
       <workItem from="1529850504150" duration="33971000" />
       <workItem from="1529941301693" duration="2409000" />
-      <workItem from="1529969410695" duration="7987000" />
+      <workItem from="1529969410695" duration="13904000" />
+      <workItem from="1530042062071" duration="618000" />
+      <workItem from="1530069390106" duration="267000" />
+      <workItem from="1530135266662" duration="2277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110760000" />
+    <option name="totallyTimeSpent" value="119839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -217,7 +222,7 @@
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32793522" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46693656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32928476" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -247,25 +252,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>646</line>
-          <option name="timeStamp" value="28" />
+          <line>487</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>697</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>173</line>
-          <option name="timeStamp" value="41" />
+          <line>606</line>
+          <option name="timeStamp" value="44" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="42" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="token" language="ObjectiveC" />
+        <watch expression="inicio" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
@@ -291,6 +292,20 @@
   <component name="editorHistoryManager">
     <entry file="file://C:/teste/prog.cpp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13379">
+          <caret line="787" column="8" selection-start-line="787" selection-start-column="8" selection-end-line="787" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/teste/prog.cpp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
@@ -300,15 +315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10931">
           <caret line="643" column="33" lean-forward="true" selection-start-line="643" selection-start-column="33" selection-end-line="643" selection-end-column="33" />
-          <folding>
-            <element signature="e#3920#7820#0" />
-            <element signature="e#11997#13427#0" />
-            <element signature="e#14650#16179#0" />
-            <element signature="e#16181#16989#0" />
-            <element signature="e#16991#17524#0" />
-            <element signature="e#17113#17500#0" />
-            <element signature="e#17502#18007#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,23 +641,21 @@
     </entry>
     <entry file="file://C:/teste/prog.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="68">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="751" column="50" selection-start-line="751" selection-start-column="50" selection-end-line="751" selection-end-column="50" />
+        <state relative-caret-position="17">
+          <caret line="827" column="35" selection-start-line="827" selection-start-column="35" selection-end-line="827" selection-end-column="35" />
           <folding>
-            <element signature="e#3920#7820#0" />
-            <element signature="e#11997#13427#0" />
-            <element signature="e#14650#16179#0" />
-            <element signature="e#16181#16989#0" />
-            <element signature="e#16991#17524#0" />
-            <element signature="e#17113#17500#0" />
-            <element signature="e#17502#18007#0" />
+            <element signature="e#10717#11091#0" />
+            <element signature="e#11093#12124#0" />
+            <element signature="e#12126#12500#0" />
+            <element signature="e#13934#14730#0" />
+            <element signature="e#20914#21424#0" />
           </folding>
         </state>
       </provider>
